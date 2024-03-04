@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\javlo\OneDrive\Desktop\02.03.24\Lesson11\Lesson07\Lesson07\obj\Debug\net8.0-windows\
+C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\obj\Debug\net8.0-windows\
 Lesson07
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\javlo\OneDrive\Desktop\02.03.24\Lesson11\Lesson07\Lesson07\App.xaml
-12558810546
+C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\App.xaml
+13-1392229360
 1-1724378052
-56-404075348
-2396720210
-MainWindow.xaml;Views\CategoriesView.xaml;Views\CategoryDialog.xaml;Views\CustomerDialog.xaml;Views\CustomersView.xaml;Views\DashboardView.xaml;Views\ProductDialog.xaml;Views\ProductsView.xaml;Views\SalesView.xaml;Views\SupplierDialog.xaml;Views\SuppliersView.xaml;Views\SuppliesView.xaml;
+60190078118
+239-1415946888
+MainWindow.xaml;Views\CategoriesView.xaml;Views\CategoryDialog.xaml;Views\CustomerDialog.xaml;Views\CustomersView.xaml;Views\DashboardView.xaml;Views\Dialogs\SaleDialog.xaml;Views\ProductDialog.xaml;Views\ProductsView.xaml;Views\SalesView.xaml;Views\SupplierDialog.xaml;Views\SuppliersView.xaml;Views\SuppliesView.xaml;
 
-True
+False
 

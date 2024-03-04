@@ -1,4 +1,5 @@
 ﻿using Lesson07.Data;
+using Lesson07.Data.Migrations;
 using Lesson07.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +32,15 @@ namespace Lesson07.Stores
 
             var products = await query.Skip((currentPage - 1) * pageSize)
                 .Take(pageSize)
+                .ToListAsync();
+
+            return products;
+        }
+
+        public async Task<List<Product>> GetProductsAsync()
+        {
+            var products = await _context.Products
+                .AsNoTracking()
                 .ToListAsync();
 
             return products;

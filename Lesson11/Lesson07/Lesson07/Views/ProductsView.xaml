@@ -74,7 +74,7 @@
         </Grid>
 
         <!--  Data Grid  -->
-        <StackPanel
+        <Grid
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="25,10,25,10">
@@ -131,7 +131,7 @@
                     </DataGrid.InputBindings>
                 </DataGrid>
             </Border>
-        </StackPanel>
+        </Grid>
 
         <!--  Pagination  -->
         <Grid
@@ -159,30 +159,13 @@
                     IsEnabled="{Binding IsEnablePrevPage}">
                     <materialDesign:PackIcon Kind="ArrowLeft" />
                 </Button>
-                <Button
-                    Width="40"
-                    Margin="20,0,3,0"
-                    Padding="5"
-                    Command="{Binding FirstPageCommand}"
-                    Content="{Binding FirstPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableFirstPage}" />
-                <Button
-                    Width="40"
-                    Margin="3,0,3,0"
-                    Padding="5"
-                    Command="{Binding SecondPageCommand}"
-                    Content="{Binding SecondPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableSecondPage}" />
-                <Button
-                    Width="40"
-                    Margin="3,0,8,0"
-                    Padding="5"
-                    Command="{Binding ThirdPageCommand}"
-                    Content="{Binding ThirdPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableThirdPage}" />
+                <TextBlock
+                    Width="150"
+                    Padding="40,0,40,0"
+                    VerticalAlignment="Center"
+                    FontFamily="16"
+                    Text="{Binding PageString}" />
+
                 <Button
                     Width="40"
                     Margin="20,0,0,0"
@@ -199,11 +182,7 @@
                     IsEnabled="{Binding IsEnableLastPage}">
                     <materialDesign:PackIcon Kind="SkipForward" />
                 </Button>
-                <TextBlock
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="16"
-                    Text="{Binding PageString}" />
+
             </StackPanel>
             <StackPanel
                 Grid.Column="1"

@@ -59,6 +59,8 @@
                     Padding="5"
                     HorizontalAlignment="Left"
                     materialDesign:HintAssist.Hint="Date From"
+                    DisplayDateEnd="{Binding EndDate}"
+                    DisplayDateStart="{Binding StartDate}"
                     SelectedDate="{Binding SelectedDateFrom}"
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
                 <DatePicker
@@ -91,7 +93,7 @@
         </Grid>
 
         <!--  Data Grid  -->
-        <StackPanel
+        <Grid
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="25,10,25,10">
@@ -120,11 +122,11 @@
                         <DataGridTextColumn Binding="{Binding TotalPaid}" Header="Total Paid" />
                         <DataGridTextColumn Binding="{Binding TotalDiscount}" Header="Total Discount" />
                         <DataGridTextColumn Binding="{Binding SaleDate}" Header="Sale Date" />
-                        <DataGridTextColumn Binding="{Binding CustomerId}" Header=" Customer Id" />
+                        <DataGridTextColumn Binding="{Binding Customer.FirstName}" Header=" Customer" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Border>
-        </StackPanel>
+        </Grid>
 
         <!--  Pagination  -->
         <Grid
@@ -152,30 +154,12 @@
                     IsEnabled="{Binding IsEnablePrevPage}">
                     <materialDesign:PackIcon Kind="ArrowLeft" />
                 </Button>
-                <Button
-                    Width="40"
-                    Margin="20,0,3,0"
-                    Padding="5"
-                    Command="{Binding FirstPageCommand}"
-                    Content="{Binding FirstPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableFirstPage}" />
-                <Button
-                    Width="40"
-                    Margin="3,0,3,0"
-                    Padding="5"
-                    Command="{Binding SecondPageCommand}"
-                    Content="{Binding SecondPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableSecondPage}" />
-                <Button
-                    Width="40"
-                    Margin="3,0,8,0"
-                    Padding="5"
-                    Command="{Binding ThirdPageCommand}"
-                    Content="{Binding ThirdPage}"
-                    FontSize="16"
-                    IsEnabled="{Binding IsEnableThirdPage}" />
+                <TextBlock
+                    Width="150"
+                    Padding="40,0,40,0"
+                    VerticalAlignment="Center"
+                    FontFamily="16"
+                    Text="{Binding PageString}" />
                 <Button
                     Width="40"
                     Margin="20,0,0,0"
@@ -192,12 +176,6 @@
                     IsEnabled="{Binding IsEnableLastPage}">
                     <materialDesign:PackIcon Kind="SkipForward" />
                 </Button>
-
-                <TextBlock
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="16"
-                    Text="{Binding PageString}" />
             </StackPanel>
             <StackPanel
                 Grid.Column="1"

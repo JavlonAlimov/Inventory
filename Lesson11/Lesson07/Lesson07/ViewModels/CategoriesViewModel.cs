@@ -79,26 +79,7 @@ namespace Lesson07.ViewModels
             set => SetProperty(ref _pageString, value);
         }
 
-        private int _firstPage = 0;
-        public int FirstPage
-        {
-            get => _firstPage;
-            set => SetProperty(ref _firstPage, value);
-        }
-
-        private int _secondPage = 1;
-        public int SecondPage
-        {
-            get => _secondPage;
-            set => SetProperty(ref _secondPage, value);
-        }
-
-        private int _thirdPage = 2;
-        public int ThirdPage
-        {
-            get => _thirdPage;
-            set => SetProperty(ref _thirdPage, value);
-        }
+     
 
         #endregion
 
@@ -118,26 +99,7 @@ namespace Lesson07.ViewModels
             set => SetProperty(ref _isEnablePrevPage, value);
         }
 
-        private bool _isEnableFirstPage = false;
-        public bool IsEnableFirstPage
-        {
-            get => _isEnableFirstPage;
-            set => SetProperty(ref _isEnableFirstPage, value);
-        }
-
-        private bool _isEnableSecondPage = true;
-        public bool IsEnableSecondPage
-        {
-            get => _isEnableSecondPage;
-            set => SetProperty(ref _isEnableSecondPage, value);
-        }
-
-        private bool _isEnableThirdPage = true;
-        public bool IsEnableThirdPage
-        {
-            get => _isEnableThirdPage;
-            set => SetProperty(ref _isEnableThirdPage, value);
-        }
+      
 
         private bool _isEnableNextPage = true;
         public bool IsEnableNextPage
@@ -159,9 +121,7 @@ namespace Lesson07.ViewModels
         public IAsyncCommand InfoCommand { get; }
         public IAsyncCommand PrimaryPageCommand { get; }
         public IAsyncCommand PrevPageCommand { get; }
-        public IAsyncCommand FirstPageCommand { get; }
-        public IAsyncCommand SecondPageCommand { get; }
-        public IAsyncCommand ThirdPageCommand { get; }
+      
         public IAsyncCommand NextPageCommand { get; }
         public IAsyncCommand LastPageCommand { get; }
         public IAsyncCommand FifteenPageCommand { get; }
@@ -184,9 +144,7 @@ namespace Lesson07.ViewModels
             PrevPageCommand = new AsyncCommand(OnPrevPage);
             LastPageCommand = new AsyncCommand(OnLastPage);
             PrimaryPageCommand = new AsyncCommand(OnPrimaryPage);
-            FirstPageCommand = new AsyncCommand(OnFirstPage);
-            SecondPageCommand = new AsyncCommand(OnSecondPage);
-            ThirdPageCommand = new AsyncCommand(OnThirdPage);
+           
             FifteenPageCommand = new AsyncCommand(OnFifteenPage);
             ThirtyPageCommand = new AsyncCommand(OnThirtyPage);
             FiftyPageCommand = new AsyncCommand(OnFiftyPage);
@@ -327,11 +285,6 @@ namespace Lesson07.ViewModels
             try
             {
                 CurrentPage++;
-
-                FirstPage = CurrentPage - 1;
-                SecondPage = CurrentPage;
-                ThirdPage = CurrentPage + 1;
-
                 await LoadAsync();
                 await CheckEnables();
 
@@ -355,10 +308,6 @@ namespace Lesson07.ViewModels
             {
                 CurrentPage--;
 
-                FirstPage = CurrentPage - 1;
-                SecondPage = CurrentPage;
-                ThirdPage = CurrentPage + 1;
-
                 await LoadAsync();
                 await CheckEnables();
             }
@@ -373,10 +322,6 @@ namespace Lesson07.ViewModels
             {
                 CurrentPage = TotalPages;
 
-                FirstPage = TotalPages - 1;
-                SecondPage = TotalPages;
-                ThirdPage = 0;
-
                 await LoadAsync();
                 await CheckEnables();
             }
@@ -390,60 +335,6 @@ namespace Lesson07.ViewModels
             try
             {
                 CurrentPage = 1;
-
-                FirstPage = 0;
-                SecondPage = 1;
-                ThirdPage = 2;
-
-                await LoadAsync();
-                await CheckEnables();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        public async Task OnFirstPage()
-        {
-            try
-            {
-                CurrentPage = FirstPage;
-
-                FirstPage--;
-                SecondPage = CurrentPage;
-                ThirdPage = CurrentPage + 1;
-
-                await LoadAsync();
-                await CheckEnables();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        public async Task OnSecondPage()
-        {
-            try
-            {
-                CurrentPage = SecondPage;
-
-                await LoadAsync();
-                await CheckEnables();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        public async Task OnThirdPage()
-        {
-            try
-            {
-                CurrentPage = ThirdPage;
-
-                FirstPage++;
-                SecondPage = CurrentPage;
-                ThirdPage = CurrentPage + 1;
 
                 await LoadAsync();
                 await CheckEnables();
@@ -463,9 +354,6 @@ namespace Lesson07.ViewModels
                     await GetTotalPages();
                     CurrentPage = TotalPages;
 
-                    FirstPage = CurrentPage - 1;
-                    SecondPage = CurrentPage;
-                    ThirdPage = 0;
                 }
 
                 await LoadAsync();
@@ -490,18 +378,14 @@ namespace Lesson07.ViewModels
                 {
                     CurrentPage = TotalPages;
 
-                    FirstPage = CurrentPage - 1;
-                    SecondPage = CurrentPage;
-                    ThirdPage = 0;
+                    
                 }
 
                 if (CurrentPage >= TotalPages)
                 {
                     CurrentPage = TotalPages;
 
-                    FirstPage = TotalPages - 1;
-                    SecondPage = TotalPages;
-                    ThirdPage = 0;
+                  
                 }
 
                 await LoadAsync();
@@ -524,9 +408,6 @@ namespace Lesson07.ViewModels
                 {
                     CurrentPage = TotalPages;
 
-                    FirstPage = TotalPages - 1;
-                    SecondPage = TotalPages;
-                    ThirdPage = 0;
                 }
 
                 await LoadAsync();
@@ -549,9 +430,6 @@ namespace Lesson07.ViewModels
                     IsEnableNextPage = true;
                     IsEnablePrimaryPage = false;
                     IsEnableLastPage = true;
-                    IsEnableFirstPage = false;
-                    IsEnableSecondPage = true;
-                    IsEnableThirdPage = true;
                 }
                 else if (CurrentPage > 1 && CurrentPage < TotalPages)
                 {
@@ -559,9 +437,6 @@ namespace Lesson07.ViewModels
                     IsEnableNextPage = true;
                     IsEnablePrimaryPage = true;
                     IsEnableLastPage = true;
-                    IsEnableFirstPage = true;
-                    IsEnableSecondPage = true;
-                    IsEnableThirdPage = true;
                 }
                 else if (CurrentPage == TotalPages)
                 {
@@ -569,9 +444,6 @@ namespace Lesson07.ViewModels
                     IsEnableNextPage = false;
                     IsEnablePrimaryPage = true;
                     IsEnableLastPage = false;
-                    IsEnableFirstPage = true;
-                    IsEnableSecondPage = true;
-                    IsEnableThirdPage = false;
                 }
 
             }

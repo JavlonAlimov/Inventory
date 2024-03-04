@@ -38,13 +38,13 @@
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Text="{Binding PhoneNumber}" />
         <TextBox
-       Width="350"
-       Height="40"
-       Margin="0,35,0,0"
-       Padding="10"
-       materialDesign:HintAssist.Hint="Address"
-       Style="{StaticResource MaterialDesignOutlinedTextBox}"
-       Text="{Binding Address}" />
+            Width="350"
+            Height="40"
+            Margin="0,35,0,0"
+            Padding="10"
+            materialDesign:HintAssist.Hint="Address"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Text="{Binding Address}" />
         <StackPanel Orientation="Horizontal">
             <Button
                 Width="170"
@@ -60,7 +60,7 @@
                 Margin="5,35,0,0"
                 Background="#6dc78b"
                 BorderThickness="0"
-                Command="{Binding SaveCommande }"
+                Command="{Binding SaveCommande}"
                 Content="Save" />
 
         </StackPanel>

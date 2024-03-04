@@ -947,3 +947,5 @@ C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\bin\Debug\ne
 C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\obj\Debug\net8.0-windows\Lesson07_Content.g.cs
 C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\bin\Debug\net8.0-windows\Syncfusion.Licensing.dll
 C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\bin\Debug\net8.0-windows\Syncfusion.SfChart.WPF.dll
+C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\obj\Debug\net8.0-windows\Views\Dialogs\SaleDialog.g.cs
+C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\obj\Debug\net8.0-windows\Views\Dialogs\SaleDialog.baml

@@ -17,7 +17,10 @@ namespace Lesson07.Stores
 
         public async Task<List<Sale>> GetSales(int pageList, int currentPage, DateTime? search = null, int? customerID = null)
         {
-            var query = _context.Sales.AsQueryable();
+            var query = _context.Sales
+                .Include(x => x.Customer)
+                .AsSplitQuery()
+                .AsQueryable();
             if (search is DateTime searchData)
             {
                 var formatSearchData = searchData.ToString("M/d/yyyy");
@@ -29,6 +32,18 @@ namespace Lesson07.Stores
                 .ToListAsync();
 
             return sales;
+        }
+
+        public async Task<Sale> CreateAsync(Sale sale)
+        {
+            _context.Entry(sale).State = EntityState.Added;
+            foreach (var saleProduct in sale.SaleProducts)
+            {
+                _context.Entry(saleProduct).State = EntityState.Added;
+            }
+            await _context.SaveChangesAsync();
+
+            return sale;
         }
 
         public async Task<int> GetCountSalesAsync()
@@ -47,7 +62,7 @@ namespace Lesson07.Stores
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }

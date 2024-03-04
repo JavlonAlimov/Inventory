@@ -59,30 +59,36 @@
                             Margin="0,0,20,0"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
-                            Foreground="#33ab53"
-                            Kind="ChartLine" />
+                            Foreground="#ffa37b"
+                            Kind="ChartFinance" />
                         <Grid
                             Grid.Row="2"
                             Grid.ColumnSpan="2"
-                            Height="40"
-                            Background="#33ab53">
+                            Height="40">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#ffa37b" Offset="0"/>
+                                    <GradientStop Color="#f9ccb8" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="93*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="85*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock
-                                Margin="10,0,0,0"
+                                Margin="10,0,8,0"
                                 VerticalAlignment="Center"
                                 Foreground="White"
-                                Text="Changes %" />
+                                Text="Changes %" Grid.ColumnSpan="2" />
                             <md:PackIcon
-                                Grid.Column="1"
+                                Grid.Column="2"
                                 Margin="0,0,10,0"
-                                HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
+                                HorizontalAlignment="Right"
                                 FontSize="20"
                                 Foreground="White"
-                                Kind="ArrowTopRightThick" />
+                                Kind="ChartTimelineVariant" />
                         </Grid>
                     </Grid>
                 </md:Card>
@@ -108,12 +114,12 @@
                             Grid.Column="0"
                             Margin="10,10,0,0"
                             FontSize="24"
-                            Text="{Binding TotalSales}" />
+                            Text="{Binding TotalSupplies }" />
                         <TextBlock
                             Grid.Row="1"
                             Grid.Column="0"
                             Margin="10"
-                            Text="Total Sales" />
+                            Text="Total Supplies" />
                         <md:PackIcon
                             Grid.RowSpan="2"
                             Grid.Column="1"
@@ -122,13 +128,18 @@
                             Margin="0,0,20,0"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
-                            Foreground="Orchid"
-                            Kind="ChartLine" />
+                            Foreground="#17c388"
+                            Kind="PackageVariantClosedPlus" />
                         <Grid
                             Grid.Row="2"
                             Grid.ColumnSpan="2"
-                            Height="40"
-                            Background="Orchid">
+                            Height="40">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#17c388" Offset="0"/>
+                                    <GradientStop Color="#74f2c6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -145,7 +156,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="20"
                                 Foreground="White"
-                                Kind="ArrowTopRightThick" />
+                                Kind="ChartTimelineVariant" />
                         </Grid>
                     </Grid>
                 </md:Card>
@@ -190,8 +201,13 @@
                         <Grid
                             Grid.Row="2"
                             Grid.ColumnSpan="2"
-                            Height="40"
-                            Background="Orchid">
+                            Height="40">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#ff5e79" Offset="0"/>
+                                    <GradientStop Color="#f7b7c1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -253,8 +269,13 @@
                         <Grid
                             Grid.Row="2"
                             Grid.ColumnSpan="2"
-                            Height="40"
-                            Background="Orchid">
+                            Height="40">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#00aaaf" Offset="0"/>
+                                    <GradientStop Color="#68eff2" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />

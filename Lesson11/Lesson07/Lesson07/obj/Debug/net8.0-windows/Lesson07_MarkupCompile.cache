@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\umarU\Desktop\projects\Lesson12\Lesson11\Lesson07\Lesson07\App.xaml
-12558810546
+13-1392229360
 1-1724378052
-53213617504
+57807770970
 239-1415946888
-MainWindow.xaml;Views\CategoriesView.xaml;Views\CategoryDialog.xaml;Views\CustomerDialog.xaml;Views\CustomersView.xaml;Views\DashboardView.xaml;Views\ProductDialog.xaml;Views\ProductsView.xaml;Views\SalesView.xaml;Views\SupplierDialog.xaml;Views\SuppliersView.xaml;Views\SuppliesView.xaml;
+MainWindow.xaml;Views\CategoriesView.xaml;Views\CategoryDialog.xaml;Views\CustomerDialog.xaml;Views\CustomersView.xaml;Views\DashboardView.xaml;Views\Dialogs\SaleDialog.xaml;Views\ProductDialog.xaml;Views\ProductsView.xaml;Views\SalesView.xaml;Views\SupplierDialog.xaml;Views\SuppliersView.xaml;Views\SuppliesView.xaml;
 
 False
 
